@@ -1,19 +1,20 @@
 import React, { Component } from 'react';
 import { Button } from 'antd';
-import styles from './App.module.css';
+import welcome from './utils/console';
 
 class App extends Component {
+  componentDidMount() {
+    welcome();
+  }
+
   shouldComponentUpdate() {
     return true;
   }
 
   render() {
-    console.log(styles);
     return (
-      <div className={styles.App}>
-        <header className="App-header">
-          <Button>123</Button>
-        </header>
+      <div>
+        <Button>123</Button>
       </div>
     );
   }
