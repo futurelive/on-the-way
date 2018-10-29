@@ -4,3 +4,4 @@ config/*
 build/*
 scripts/*
 src/serviceWorker.js
+src/utils/console.js

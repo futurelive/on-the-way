@@ -1,5 +1,5 @@
 const welcome = () => {
-  console.log(`%c
+  console.log(`
                  .-~~~~~~~~~-._       _.-~~~~~~~~~-.
              __.'              ~.   .~              .__
            .'//                  \\./                  \\.
@@ -8,9 +8,7 @@ const welcome = () => {
      .'//.-"                 -.   |  .-'                 "-.\\.
    .'//______.============-..   \\ | /   ..-============.______\\.
  .'//____________________________\\|/____________________________\\.
-    `, 'color: #094770');
-  console.log('%cDo you like this website? welcome to join us', 'color: #000');
-  console.log('Mail of Eric: %cEricLee00@163.com', 'color: #329FD9');
-  console.log('Mail of Jun: %cjimmy352@qq.com', 'color: #329FD9');
+    `);
+  console.log('It\'s never to old to learn.');
 };
 export default welcome;
