@@ -24,7 +24,7 @@ class ErrorBoundary extends Component {
     const { catchError } = this.state;
     const { children } = this.props;
     if (catchError) return <div>Error</div>;
-    return children;
+    return <>{ children }</>;
   }
 }
 

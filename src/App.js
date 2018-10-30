@@ -1,17 +1,16 @@
 import React, { Component } from 'react';
-// import { Button } from 'antd';
 import { Provider } from 'react-redux';
-import { createStore } from 'redux';
-import welcome from './utils/console';
 import ErrorBoundary from './error/ErrorBoundary';
-import getUser from './services/user';
-
-const store = createStore(() => {});
+// import getUser from './services/user';
+import store from './store/index';
+// import welcome from './utils/console';
+import Home from './containers/Home';
 
 class App extends Component {
-  async componentDidMount() {
-    welcome();
-    await getUser();
+  componentDidMount() {
+    // store.dispatch('getUsers');
+    // welcome();
+    // await getUser();
   }
 
   shouldComponentUpdate() {
@@ -21,7 +20,9 @@ class App extends Component {
   render() {
     return (
       <Provider store={store}>
-        <ErrorBoundary>Hello Word!</ErrorBoundary>
+        <ErrorBoundary>
+          <Home />
+        </ErrorBoundary>
       </Provider>
     );
   }
