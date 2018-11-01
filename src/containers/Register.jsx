@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import HomeRouter from '../routers/Home';
+import RegisterRouter from '../routers/Register';
 
 function mapStateToProps(state) {
   const { users } = state.users;
@@ -16,6 +16,6 @@ function mapDispatchToProps(dispatch) {
   };
 }
 
-const Home = connect(mapStateToProps, mapDispatchToProps)(HomeRouter);
+const Register = connect(mapStateToProps, mapDispatchToProps)(RegisterRouter);
 
-export default Home;
+export default Register;

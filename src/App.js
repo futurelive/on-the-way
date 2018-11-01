@@ -1,16 +1,20 @@
 import React, { Component } from 'react';
+import { Router, Route } from 'react-router';
 import { Provider } from 'react-redux';
+import { createBrowserHistory } from 'history';
 import ErrorBoundary from './error/ErrorBoundary';
-// import getUser from './services/user';
+import NotFoundPage from './error/NotFoundPage';
 import store from './store/index';
-// import welcome from './utils/console';
+import welcome from './utils/console';
+import Register from './containers/Register';
 import Home from './containers/Home';
+// import {BrowserRouter, Route, Switch} from 'react-router-dom'
+
+const history = createBrowserHistory();
 
 class App extends Component {
   componentDidMount() {
-    // store.dispatch('getUsers');
-    // welcome();
-    // await getUser();
+    welcome();
   }
 
   shouldComponentUpdate() {
@@ -21,7 +25,13 @@ class App extends Component {
     return (
       <Provider store={store}>
         <ErrorBoundary>
-          <Home />
+          <Router history={history}>
+            <>
+              <Route path="/home" component={Home} />
+              <Route path="/register" component={Register} />
+              <Route component={NotFoundPage} />
+            </>
+          </Router>
         </ErrorBoundary>
       </Provider>
     );
