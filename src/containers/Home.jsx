@@ -1,11 +1,8 @@
 import { connect } from 'react-redux';
 import HomeRouter from '../routers/Home';
 
-function mapStateToProps(state) {
-  const { users } = state.users;
-  return {
-    users,
-  };
+function mapStateToProps() {
+  return {};
 }
 
 function mapDispatchToProps(dispatch) {

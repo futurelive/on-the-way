@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { Router, Route } from 'react-router';
 import { Provider } from 'react-redux';
 import { createBrowserHistory } from 'history';
+import ReactIScroll from 'react-iscroll';
+import iScroll from 'iscroll';
 import ErrorBoundary from './error/ErrorBoundary';
 import NotFoundPage from './error/NotFoundPage';
 import store from './store/index';
@@ -23,17 +25,22 @@ class App extends Component {
 
   render() {
     return (
-      <Provider store={store}>
-        <ErrorBoundary>
-          <Router history={history}>
-            <>
-              <Route path="/home" component={Home} />
-              <Route path="/register" component={Register} />
-              <Route component={NotFoundPage} />
-            </>
-          </Router>
-        </ErrorBoundary>
-      </Provider>
+      <ReactIScroll
+        iScroll={iScroll}
+        options={{ mouseWheel: true, scrollbars: true, probeType: 2 }}
+      >
+        <Provider store={store}>
+          <ErrorBoundary>
+            <Router history={history}>
+              <>
+                <Route path="/home" component={Home} />
+                <Route path="/register" component={Register} />
+                <Route component={NotFoundPage} />
+              </>
+            </Router>
+          </ErrorBoundary>
+        </Provider>
+      </ReactIScroll>
     );
   }
 }

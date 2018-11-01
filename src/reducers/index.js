@@ -1,12 +1,6 @@
-const defaultStore = {
-  users: [],
-};
+import { combineReducers } from 'redux';
+import register from './register';
 
-export default (state = defaultStore, action) => {
-  switch (action.type) {
-    case 'getUsers':
-      return state;
-    default:
-      return state;
-  }
-};
+export default combineReducers({
+  register,
+});

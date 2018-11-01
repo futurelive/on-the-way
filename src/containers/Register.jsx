@@ -2,16 +2,15 @@ import { connect } from 'react-redux';
 import RegisterRouter from '../routers/Register';
 
 function mapStateToProps(state) {
-  const { users } = state.users;
   return {
-    users,
+    register: state.register,
   };
 }
 
 function mapDispatchToProps(dispatch) {
   return {
-    getUser: () => {
-      dispatch({ type: 'getUsers' });
+    handleRegister: (key, payload) => {
+      dispatch({ type: 'handleRegister', key, payload });
     },
   };
 }
