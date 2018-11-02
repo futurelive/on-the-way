@@ -3,12 +3,11 @@
     min-height: 100%;
     padding-top: 24px;
     padding-bottom: 60px;
-    background: #FAFAFA;
 }
 .card {
-    width: 430px;
+    max-width: 430px;
     margin: auto;
-    padding: 56px 8px 72px;
+    padding: 56px 20px 72px;
 }
 .cardLogo {
     text-align: center;
@@ -39,4 +38,15 @@
 }
 .center {
     text-align: center;
+}
+/*
+ * media
+*/
+@media only screen and (max-width: 575px) {
+    .container {
+        padding-top: 0px;
+    }
+    .card {
+        border: none;
+    }
 }

@@ -1,5 +1,6 @@
 import { connect } from 'react-redux';
 import RegisterRouter from '../routers/Register';
+import * as action from '../actions/register';
 
 function mapStateToProps(state) {
   return {
@@ -9,8 +10,8 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
   return {
-    handleRegister: (key, payload) => {
-      dispatch({ type: 'handleRegister', key, payload });
+    updateRegister: (key, value) => {
+      dispatch(action.updateRegister(key, value));
     },
   };
 }

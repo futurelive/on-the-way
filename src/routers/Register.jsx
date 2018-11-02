@@ -9,10 +9,10 @@ class Register extends Component {
   }
 
   render() {
-    const { register, handleRegister } = this.props;
+    const { register, updateRegister } = this.props;
     return (
       <div className={style.full}>
-        <RegisterComponent register={register} handleRegister={handleRegister} />
+        <RegisterComponent register={register} updateRegister={updateRegister} />
       </div>
     );
   }
@@ -25,7 +25,7 @@ Register.propTypes = {
     password: PropTypes.string.isRequired,
     mail: PropTypes.string.isRequired,
   }).isRequired,
-  handleRegister: PropTypes.func.isRequired,
+  updateRegister: PropTypes.func.isRequired,
 };
 
 export default Register;

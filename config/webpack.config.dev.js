@@ -281,6 +281,24 @@ module.exports = {
               getLocalIdent: getCSSModuleLocalIdent,
             }),
           },
+          // {
+          //   test: /\.less$/,
+          //   use: [{
+          //     loader: 'style-loader',
+          //   }, {
+          //     loader: 'css-loader',
+          //   }, {
+          //     loader: 'less-loader',
+          //     options: {
+          //       modifyVars: {
+          //         'primary-color': 'red',
+          //         'link-color': 'red',
+          //         'border-radius-base': '2px',
+          //       },
+          //       javascriptEnabled: true,
+          //     },
+          //   }]
+          // },
           // Opt-in support for SASS (using .scss or .sass extensions).
           // Chains the sass-loader with the css-loader and the style-loader
           // to immediately apply all styles to the DOM.

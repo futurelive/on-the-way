@@ -10,7 +10,7 @@ import icon from '../../assets/icon.svg';
 // const { Meta } = Card;
 
 const Register = (props) => {
-  const { register, handleRegister } = props;
+  const { register, updateRegister } = props;
   return (
     <div className={style.container}>
       <Card
@@ -27,7 +27,7 @@ const Register = (props) => {
         <div className={style.formItem}>
           <Input
             value={register.userName}
-            onChange={e => handleRegister('userName', e.target.value)}
+            onChange={e => updateRegister('userName', e.target.value)}
             size="large"
             placeholder="昵称"
           />
@@ -35,7 +35,7 @@ const Register = (props) => {
         <div className={style.formItem}>
           <Input
             value={register.phoneNumber}
-            onChange={e => handleRegister('phoneNumber', e.target.value)}
+            onChange={e => updateRegister('phoneNumber', e.target.value)}
             size="large"
             addonBefore="+86"
             placeholder="仅支持中国大陆手机号码"
@@ -44,7 +44,7 @@ const Register = (props) => {
         <div className={style.formItem}>
           <Input
             value={register.password}
-            onChange={e => handleRegister('password', e.target.value)}
+            onChange={e => updateRegister('password', e.target.value)}
             size="large"
             type="password"
             placeholder="密码（至少6位）"
@@ -54,7 +54,7 @@ const Register = (props) => {
         <div className={style.formItem}>
           <Input
             value={register.mail}
-            onChange={e => handleRegister('mail', e.target.value)}
+            onChange={e => updateRegister('mail', e.target.value)}
             size="large"
             placeholder="邮箱"
           />
@@ -78,7 +78,7 @@ Register.propTypes = {
     password: PropTypes.string.isRequired,
     mail: PropTypes.string.isRequired,
   }).isRequired,
-  handleRegister: PropTypes.func.isRequired,
+  updateRegister: PropTypes.func.isRequired,
 };
 
 export default Register;
