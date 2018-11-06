@@ -6,4 +6,6 @@ export const updateRegister = (key, value) => ({
   payload: value,
 });
 
-export const test = 'test';
+export const handleRegister = () => ({
+  type: types.handleRegister,
+});

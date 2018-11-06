@@ -13,6 +13,9 @@ function mapDispatchToProps(dispatch) {
     updateRegister: (key, value) => {
       dispatch(action.updateRegister(key, value));
     },
+    handleRegister: () => {
+      dispatch(action.handleRegister());
+    },
   };
 }
 

@@ -1,2 +1,2 @@
-export const updateRegister = 'updateRegister';
-export const test = 'test';
+export const updateRegister = Symbol('updateRegister');
+export const handleRegister = Symbol('handleRegister');
