@@ -4,7 +4,7 @@ import * as action from '../actions/register';
 
 function mapStateToProps(state) {
   return {
-    register: state.register,
+    register: state.get('register').toJSON(),
   };
 }
 
