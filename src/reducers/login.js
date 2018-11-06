@@ -1,17 +1,15 @@
 import { Map } from 'immutable';
-import * as types from '../constants/types/register';
+import * as types from '../constants/types/login';
 
 const defaultStore = Map({
   userName: '',
-  phoneNumber: '',
   password: '',
-  mail: '',
   viewPassword: false,
 });
 
 export default (state = defaultStore, action) => {
   switch (action.type) {
-    case types.updateRegister:
+    case types.updateLogin:
       return state.set(action.key, action.payload);
     default:
       return state;

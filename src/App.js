@@ -9,6 +9,7 @@ import NotFoundPage from './error/NotFoundPage';
 import store from './store/index';
 import welcome from './utils/console';
 import Register from './containers/Register';
+import Login from './containers/Login';
 import Home from './containers/Home';
 // import {BrowserRouter, Route, Switch} from 'react-router-dom'
 
@@ -35,6 +36,7 @@ class App extends Component {
               <>
                 <Route path="/home" component={Home} />
                 <Route path="/register" component={Register} />
+                <Route path="/login" component={Login} />
                 <Route component={NotFoundPage} />
               </>
             </Router>

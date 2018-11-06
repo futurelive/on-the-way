@@ -27,8 +27,6 @@ const Register = (props) => {
         <Form>
           <FormItem
             className={style.formItem}
-            // help="Should be combination of numbers & alphabets"
-            // validateStatus={register.userName.match(/^\s*$/) ? 'error' : 'success'}
           >
             <Input
               value={register.userName}
@@ -51,9 +49,15 @@ const Register = (props) => {
               value={register.password}
               onChange={e => updateRegister('password', e.target.value)}
               size="large"
-              type="password"
+              type={register.viewPassword ? 'text' : 'password'}
               placeholder="密码（至少6位）"
-              suffix={<Icon type="eye" theme="outlined" />}
+              suffix={(
+                <Icon
+                  type="eye"
+                  theme={register.viewPassword ? 'twoTone' : 'outlined'}
+                  onClick={() => updateRegister('viewPassword', !register.viewPassword)}
+                />
+              )}
             />
           </FormItem>
           <FormItem className={style.formItem}>
