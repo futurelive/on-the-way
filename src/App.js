@@ -18,6 +18,7 @@ const history = createBrowserHistory();
 class App extends Component {
   componentDidMount() {
     welcome();
+    window.React = React;
   }
 
   shouldComponentUpdate() {
