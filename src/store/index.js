@@ -4,6 +4,8 @@ import reducer from '../reducers/index';
 import register from '../middleWares/register';
 import login from '../middleWares/login';
 
-const store = createStore(reducer, applyMiddleware(logger, register, login));
+const middleware = process.env ? [logger, register, login] : [register, login];
+
+const store = createStore(reducer, applyMiddleware(...middleware));
 
 export default store;
