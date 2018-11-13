@@ -1,5 +1,31 @@
 .padding {
-    padding: 0 0;
+
+    background: #F9F9F9;
+
+    div[contenteditable=true] {
+        min-height: 800px;
+        max-width: 874px;
+        margin: 16px auto;
+        border: 1px solid #e8e8e8;
+        box-shadow: 0 2px 8px hsla(0, 0%, 45.1%, .08);
+        background: #FFFFFF;
+    }
+
+    @media only screen and (max-width: 768px) {
+        div[contenteditable=true] {
+            margin: 0;
+            border: 0;
+        }
+    }
+
+    .bf-controlbar {
+        background: #FCFCFC;
+    }
+
+    .bf-container {
+        background: red !important;
+    }
+
 }
 .color {
     background: #cdcdcd;

@@ -1,34 +1,60 @@
 import React, { Component } from 'react';
-// 引入编辑器组件
 import BraftEditor from 'braft-editor';
-// 引入编辑器样式
 import 'braft-editor/dist/index.css';
+import styles from './Editor.module.scss';
 // import CodeHighlighter from 'braft-extensions/dist/code-highlighter';
 
 // BraftEditor.use(CodeHighlighter({
 //   includeEditors: ['editor-with-code-highlighter'],
 // }));
+// import 'prismjs/components/prism-java';
+// import 'prismjs/components/prism-php';
+
+// const options = {
+//   syntaxs: [
+//     {
+//       name: 'JavaScript',
+//       syntax: 'javascript',
+//     }, {
+//       name: 'HTML',
+//       syntax: 'html',
+//     }, {
+//       name: 'CSS',
+//       syntax: 'css',
+//     }, {
+//       name: 'Java',
+//       syntax: 'java',
+//     }, {
+//       name: 'PHP',
+//       syntax: 'php',
+//     },
+//   ],
+// };
+
+// BraftEditor.use(CodeHighlighter(options));
 
 class Editor extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      editorState: BraftEditor.createEditorState('<p>Hello <b>World!</b></p>'),
-      outputHTML: '<p></p>',
+      editorState: BraftEditor.createEditorState('<p></p>'),
     };
     this.handleChange = this.handleChange.bind(this);
     this.controls = [
-      {
-        key: 'bold',
-        text: <b>加粗</b>,
-      },
-      'italic', 'underline', 'separator', 'link', 'separator', 'media',
+      'undo', 'redo', 'separator',
+      'headings', 'font-size', 'line-height', 'letter-spacing', 'separator',
+      'text-color', 'bold', 'italic', 'underline', 'strike-through', 'separator',
+      'superscript', 'subscript', 'remove-styles', 'separator', 'text-indent', 'text-align', 'separator',
+      'list-ul', 'list-ol', 'blockquote', 'code', 'separator',
+      'link', 'separator', 'hr', 'separator',
+      'media', 'separator',
+      'clear',
+      // 'emoji',
     ];
   }
 
   componentDidMount() {
     this.isLivinig = true;
-    // 3秒后更改编辑器内容
     setTimeout(this.setEditorContentAsync, 3000);
   }
 
@@ -47,21 +73,18 @@ class Editor extends Component {
   handleChange(editorState) {
     this.setState({
       editorState,
-      outputHTML: editorState.toHTML(),
     });
   }
 
   render() {
-    const { editorState, outputHTML } = this.state;
+    const { editorState } = this.state;
     return (
-      <div className="my-component">
+      <div className={styles.padding}>
         <BraftEditor
-          // controls={this.controls}
+          controls={this.controls}
           value={editorState}
           onChange={this.handleChange}
         />
-        <h5>输出内容</h5>
-        <div className="output-content">{outputHTML}</div>
       </div>
     );
   }
