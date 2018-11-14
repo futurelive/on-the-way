@@ -9,3 +9,7 @@ export const updateLogin = (key, value) => ({
 export const handleLogin = () => ({
   type: types.handleLogin,
 });
+
+export const loginSuccess = () => ({
+  type: types.loginSuccess,
+});

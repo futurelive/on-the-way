@@ -42,7 +42,8 @@ class Editor extends Component {
     this.handleChange = this.handleChange.bind(this);
     this.controls = [
       'undo', 'redo', 'separator',
-      'headings', 'font-size', 'line-height', 'letter-spacing', 'separator',
+      'headings', 'separator',
+      // 'headings', 'font-size', 'line-height', 'letter-spacing', 'separator',
       'text-color', 'bold', 'italic', 'underline', 'strike-through', 'separator',
       'superscript', 'subscript', 'remove-styles', 'separator', 'text-indent', 'text-align', 'separator',
       'list-ul', 'list-ol', 'blockquote', 'code', 'separator',

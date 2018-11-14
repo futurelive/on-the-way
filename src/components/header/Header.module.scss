@@ -2,12 +2,26 @@
     height: 60px;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-evenly;
     background: hsl(0, 0%, 100%);
     box-shadow: 0 1px 2px 0 rgba(0,0,0,.06);
 }
 .logo {
     img {
         height: 32px;
+    }
+}
+.search {
+    input {
+        background: #F5F5F5;
+        outline: none !important;
+    }
+}
+.menu {
+    height: 60px;
+
+    li[role='menuitem'] {
+        height: 60px;
+        line-height: 60px;
     }
 }
