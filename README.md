@@ -57,7 +57,7 @@ Then add the block below to your `launch.json` file and put it inside the `.vsco
       "name": "Chrome",
       "type": "chrome",
       "request": "launch",
-      "url": "http://localhost:3000",
+      "url": "http://localhost:8080",
       "webRoot": "${workspaceRoot}/src",
       "sourceMapPathOverrides": {
         "webpack:///src/*": "${webRoot}/*"

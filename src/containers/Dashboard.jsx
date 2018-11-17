@@ -1,14 +1,17 @@
 import { connect } from 'react-redux';
 import DashboardRouter from '../routers/Dashboard';
+import handleRouterAction from '../actions/router';
 
-function mapStateToProps() {
-  return {};
+function mapStateToProps(state) {
+  return {
+    dashboardPath: state.get('router').get('dashboardPath'),
+  };
 }
 
 function mapDispatchToProps(dispatch) {
   return {
-    getUser: () => {
-      dispatch({ type: 'getUsers' });
+    handleDashboardPath: (path) => {
+      dispatch(handleRouterAction(path));
     },
   };
 }

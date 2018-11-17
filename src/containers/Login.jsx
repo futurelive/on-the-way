@@ -4,7 +4,7 @@ import * as action from '../actions/login';
 
 function mapStateToProps(state) {
   return {
-    login: state.get('login').toJSON(),
+    login: state.get('login').toJS(),
   };
 }
 

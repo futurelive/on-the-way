@@ -1,9 +1,10 @@
 import * as types from '../constants/types/login';
-import * as keys from '../constants/key/login';
+import handleRouter from '../actions/router';
+import * as keys from '../constants/key/keys';
 import login from '../services/login';
 import { outFactory } from '../bean/login';
 import handleNetWork from '../error/handle';
-import { history, loginPath } from '../history';
+import { dashboard } from '../history';
 
 const loginTypes = [
   types.handleLogin,
@@ -14,7 +15,7 @@ const handleMapping = {
     const sendData = outFactory(store.getState().get(keys.login));
     const { data } = await login(sendData);
 
-    if (handleNetWork(data, store)) history.push(loginPath());
+    if (handleNetWork(data, store)) store.dispatch(handleRouter(dashboard));
   },
 };
 
