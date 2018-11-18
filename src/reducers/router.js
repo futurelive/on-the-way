@@ -3,7 +3,7 @@ import * as keys from '../constants/key/keys';
 import handleDashboardPath from '../constants/types/router';
 
 const defaultStore = Map({
-  dashboardPath: '/dashboard',
+  dashboardPath: '/dashboard/main',
 });
 
 export default (state = defaultStore, action) => {

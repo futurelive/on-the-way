@@ -14,9 +14,9 @@ class Navigation extends Component {
     return (
       <div className={styles.nav}>
         <Link
-          to="/dashboard"
-          className={dashboardPath === '/dashboard' ? styles.selected : undefined}
-          onClick={() => handleDashboardPath('/dashboard')}
+          to="/dashboard/main"
+          className={dashboardPath === '/dashboard/main' ? styles.selected : undefined}
+          onClick={() => handleDashboardPath('/dashboard/main')}
         >
           <Icon type="plus" />
           <span>工作台</span>

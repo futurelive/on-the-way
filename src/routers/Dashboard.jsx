@@ -4,6 +4,7 @@ import { Row, Col } from 'antd';
 import PropTypes from 'prop-types';
 import Header from '../components/header/Header';
 import Navigation from '../components/navigation/Navigation';
+import DashboardMain from './dashboard/Dashboard';
 
 class Dashboard extends Component {
   shouldComponentUpdate() {
@@ -24,8 +25,8 @@ class Dashboard extends Component {
           </Col>
           <Col span={20}>
             <Route
-              path="/dashboard/docs"
-              component={Navigation}
+              path="/dashboard/main"
+              component={DashboardMain}
             />
           </Col>
         </Row>
