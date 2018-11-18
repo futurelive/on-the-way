@@ -17,7 +17,7 @@ const RecentEdit = () => (
       <Col span={12} className={style.col}>
         <Card hoverable bodyStyle={bodyStyle}>
           <p>
-            <span>文章标题</span>
+            <span className={style.title}>文章标题</span>
             <Icon type="edit" />
           </p>
           <p>
@@ -33,7 +33,7 @@ const RecentEdit = () => (
       <Col span={12} className={style.col}>
         <Card hoverable bodyStyle={bodyStyle}>
           <p>
-            <span>文章标题</span>
+            <span className={style.title}>文章标题</span>
             <Icon type="edit" />
           </p>
           <p>
