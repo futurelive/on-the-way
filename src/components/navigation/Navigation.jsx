@@ -18,7 +18,7 @@ class Navigation extends Component {
           className={dashboardPath === '/dashboard/main' ? styles.selected : undefined}
           onClick={() => handleDashboardPath('/dashboard/main')}
         >
-          <Icon type="plus" />
+          <Icon type="appstore" />
           <span>工作台</span>
         </Link>
         <Link
@@ -26,7 +26,7 @@ class Navigation extends Component {
           className={dashboardPath === '/dashboard/docs' ? styles.selected : undefined}
           onClick={() => handleDashboardPath('/dashboard/docs')}
         >
-          <Icon type="plus" />
+          <Icon type="read" />
           <span>我的知识库</span>
         </Link>
         <Link
@@ -34,7 +34,7 @@ class Navigation extends Component {
           className={dashboardPath === '/dashboard' ? styles.selected : undefined}
           onClick={() => handleDashboardPath('/dashboard')}
         >
-          <Icon type="plus" />
+          <Icon type="file-text" />
           <span>我的文档</span>
         </Link>
         <Link
@@ -42,7 +42,7 @@ class Navigation extends Component {
           className={dashboardPath === '/dashboard' ? styles.selected : undefined}
           onClick={() => handleDashboardPath('/dashboard')}
         >
-          <Icon type="plus" />
+          <Icon type="star" />
           <span>我的收藏</span>
         </Link>
         <Link
@@ -50,7 +50,7 @@ class Navigation extends Component {
           className={dashboardPath === '/dashboard' ? styles.selected : undefined}
           onClick={() => handleDashboardPath('/dashboard')}
         >
-          <Icon type="plus" />
+          <Icon type="heart" />
           <span>我的关注</span>
         </Link>
         <Link
@@ -58,7 +58,7 @@ class Navigation extends Component {
           className={dashboardPath === '/dashboard' ? styles.selected : undefined}
           onClick={() => handleDashboardPath('/dashboard')}
         >
-          <Icon type="plus" />
+          <Icon type="message" />
           <span>我的讨论</span>
         </Link>
       </div>

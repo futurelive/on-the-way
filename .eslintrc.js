@@ -9,5 +9,6 @@ module.exports = {
         "es6": true,
         "jasmine": true,
         "browser": true
-    }
+    },
+    "parser": "babel-eslint"
 };

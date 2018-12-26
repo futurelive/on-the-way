@@ -12,7 +12,6 @@ export default (state = defaultStore, action) => {
     case types.updateLogin:
       return state.set(action.key, action.payload);
     case types.loginSuccess:
-      alert(123);
       return state;
     default:
       return state;
