@@ -13,6 +13,7 @@ const getClientEnvironment = require('./env');
 const paths = require('./paths');
 const ManifestPlugin = require('webpack-manifest-plugin');
 const ModuleNotFoundPlugin = require('react-dev-utils/ModuleNotFoundPlugin');
+const DashboardPlugin = require('webpack-dashboard/plugin');
 
 
 // Webpack uses `publicPath` to determine where the app is being served from.
@@ -363,6 +364,7 @@ module.exports = {
     ],
   },
   plugins: [
+    new DashboardPlugin(),
     // Generates an `index.html` file with the <script> injected.
     new HtmlWebpackPlugin({
       inject: true,

@@ -10,7 +10,7 @@ const handleMapping = {
   [types.handleRegister]: async ({ store }) => {
     const sendData = outFactory(store.getState().get('register'));
     const { data } = await register(sendData);
-    console.log(data);
+    console.log(data);  // eslint-disable-line
   },
 };
 

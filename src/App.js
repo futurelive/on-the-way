@@ -7,28 +7,48 @@ import { history } from './history';
 
 import ExplandRouters from './explandRouters';
 import ErrorBoundary from './error/ErrorBoundary';
-// import NotFoundPage from './error/NotFoundPage';
 import store from './store/index';
-import welcome from './utils/console';
-// import Register from './containers/Register';
-// import Login from './containers/Login';
-// import Dashboard from './containers/Dashboard';
+// import welcome from './utils/console';
 // import Home from './containers/Home';
-// import Editor from './components/editor/Editor';
 
+const Register = lazy(() => import('./containers/Register'));
+const Login = lazy(() => import('./containers/Login'));
 const Dashboard = lazy(() => import('./containers/Dashboard'));
+const NotFoundPage = lazy(() => import('./error/NotFoundPage'));
+const Editor = lazy(() => import('./components/editor/Editor'));
 
 const routes = [
   {
+    path: '/register',
+    component: Register,
+    routes: [],
+  },
+  {
+    path: '/login',
+    component: Login,
+    routes: [],
+  },
+  {
     path: '/dashboard',
     component: Dashboard,
+    routes: [],
+  },
+  {
+    path: '/home/:userId/:knowledgeId/:articleId/edit',
+    component: Editor,
+    routes: [],
+  },
+  {
+    path: '/*',
+    component: NotFoundPage,
     routes: [],
   },
 ];
 
 class App extends Component {
   componentDidMount() {
-    welcome();
+    // 控制台展示信息,可添加欢迎词或者宣传词
+    // welcome();
   }
 
   shouldComponentUpdate() {
@@ -47,12 +67,6 @@ class App extends Component {
                       <ExplandRouters key={route.path} {...route} />
                     ))
                   }
-                  {/* <Route path="/home/:userId/:knowledgeId/:articleId/edit" component={Editor} />
-                  <Route path="/register" component={Register} />
-                  <Route path="/login" component={Login} />
-                  <Route path="/dashboard" component={Dashboard} />
-                  <Route path="/dashboard/docs" component={Login} />
-                  <Route component={NotFoundPage} /> */}
                 </>
             </Router>
           </ErrorBoundary>
