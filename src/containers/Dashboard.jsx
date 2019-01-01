@@ -5,6 +5,8 @@ import handleRouterAction from '../actions/router';
 function mapStateToProps(state) {
   return {
     dashboardPath: state.get('router').get('dashboardPath'),
+    recentEdit: state.get('dashboard').get('recentEdit'),
+    suggest: state.get('dashboard').get('suggest'),
   };
 }
 

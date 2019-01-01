@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Route } from 'react-router';
+import { Route, Redirect } from 'react-router';
 import { Row, Col } from 'antd';
 import PropTypes from 'prop-types';
 import Header from '../components/header/Header';
@@ -12,7 +12,12 @@ class Dashboard extends Component {
   }
 
   render() {
-    const { dashboardPath, handleDashboardPath } = this.props;
+    const {
+      dashboardPath,
+      handleDashboardPath,
+      recentEdit,
+      suggest,
+    } = this.props;
     return (
       <div>
         <Header />
@@ -26,8 +31,9 @@ class Dashboard extends Component {
           <Col span={20}>
             <Route
               path="/dashboard/main"
-              component={DashboardMain}
+              render={() => (<DashboardMain recentEdit={recentEdit} suggest={suggest} />)}
             />
+            <Redirect path="/dashboard" to="/dashboard/main" />
           </Col>
         </Row>
       </div>
@@ -38,6 +44,20 @@ class Dashboard extends Component {
 Dashboard.propTypes = {
   dashboardPath: PropTypes.string.isRequired,
   handleDashboardPath: PropTypes.func.isRequired,
+  recentEdit: PropTypes.arrayOf(PropTypes.shape({
+    title: PropTypes.string.isRequired,
+    knowledgeName: PropTypes.string.isRequired,
+    knowledgeId: PropTypes.number.isRequired,
+    userName: PropTypes.string.isRequired,
+    updateTime: PropTypes.string.isRequired,
+  })).isRequired,
+  suggest: PropTypes.arrayOf(PropTypes.shape({
+    title: PropTypes.string.isRequired,
+    cover: PropTypes.string.isRequired,
+    knowledgeId: PropTypes.number.isRequired,
+    userName: PropTypes.string.isRequired,
+    articleId: PropTypes.number.isRequired,
+  })).isRequired,
 };
 
 export default Dashboard;

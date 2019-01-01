@@ -3,7 +3,7 @@ const logger = store => next => (action) => {
     console.info('%cpre state', 'color: #9e9e9e', store.getState().toJS());                                     // eslint-disable-line
     console.info('%caction', 'color: #03a9f4', action);                                                         // eslint-disable-line
   const result = next(action);                                                                                  // eslint-disable-line
-    console.info('%cnext state', 'color: #4caf50', store.getState().toJS());                                     // eslint-disable-line
+    console.info('%cnext state', 'color: #4caf50', store.getState().toJS());                                    // eslint-disable-line
     console.groupEnd('%caction', 'color: #9e9e9e', action.type);                                                // eslint-disable-line
   return result;
 };

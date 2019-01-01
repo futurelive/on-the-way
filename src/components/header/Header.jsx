@@ -67,7 +67,7 @@ const Header = () => (
     </div>
     <div className={styles.search}>
       <Input
-        placeholder="搜索"
+        placeholder="在语雀中搜索"
         prefix={<Icon type="search" style={{ color: 'rgba(0, 0, 0, .25)' }} />}
       />
     </div>

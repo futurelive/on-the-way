@@ -1,5 +1,5 @@
 import React, { Component, lazy, Suspense } from 'react';
-import { Router } from 'react-router';
+import { Router, Switch } from 'react-router';
 import { Provider } from 'react-redux';
 import Loading from './components/loading/Loading';
 import { history } from './history';
@@ -61,13 +61,13 @@ class App extends Component {
         <Provider store={store}>
           <ErrorBoundary>
             <Router history={history} path="/">
-                <>
-                  {
-                    routes.map(route => (
-                      <ExplandRouters key={route.path} {...route} />
-                    ))
-                  }
-                </>
+              <Switch location={window.location}>
+                {
+                  routes.map(route => (
+                    <ExplandRouters key={route.path} {...route} />
+                  ))
+                }
+              </Switch>
             </Router>
           </ErrorBoundary>
         </Provider>

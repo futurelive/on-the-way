@@ -1,5 +1,5 @@
 .col {
-    padding-left: 4px;
+    padding-left: 14px;
     padding-right: 4px;
     padding-bottom: 8px;
 
@@ -19,7 +19,9 @@
     }
 
     a {
+        margin: 10px 10px;
         color: #8c8c8c;
+        display: block;
     }
 
     .date {
