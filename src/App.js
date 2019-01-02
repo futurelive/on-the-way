@@ -48,6 +48,7 @@ const routes = [
 class App extends Component {
   componentDidMount() {
     // 控制台展示信息,可添加欢迎词或者宣传词
+    // 弹框推销信息
     // welcome();
   }
 

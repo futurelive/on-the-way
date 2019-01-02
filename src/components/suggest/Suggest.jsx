@@ -25,6 +25,7 @@ const Suggest = (props) => {
       >
         <Meta
           title={suggest[0].title}
+          className={style.metaTitle}
         />
       </Card>
       {

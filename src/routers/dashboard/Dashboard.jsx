@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Row, Col } from 'antd';
 import RecentEdit from '../../components/recentEdit/RecentEdit';
+import RecentEvent from '../../components/recentEvent/RecentEvent';
 import Suggest from '../../components/suggest/Suggest';
 import styles from './comm.module.scss';
 // import { Route } from 'react-router';
@@ -16,7 +17,7 @@ class Dashboard extends Component {
   }
 
   render() {
-    const { recentEdit, suggest } = this.props;
+    const { recentEdit, suggest, recentEvent } = this.props;
     return (
       <div className={styles.dashboard}>
         <Row>
@@ -26,7 +27,7 @@ class Dashboard extends Component {
               {
                 recentEdit.map(s => (
                   <RecentEdit
-                    key={s.knowledgeId}
+                    key={s.articleId}
                     title={s.title}
                     userName={s.userName}
                     knowledgeName={s.knowledgeName}
@@ -37,7 +38,13 @@ class Dashboard extends Component {
             </Row>
             <br />
             <h4>动态</h4>
-            <RecentEdit />
+            {
+              recentEvent.map(s => (
+                <RecentEvent
+                  key={s.articleId}
+                />
+              ))
+            }
           </Col>
           <Col span={6}>
             <h4>今日推荐</h4>
@@ -56,7 +63,21 @@ Dashboard.propTypes = {
     knowledgeId: PropTypes.number.isRequired,
     userName: PropTypes.string.isRequired,
     updateTime: PropTypes.string.isRequired,
+    articleId: PropTypes.number.isRequired,
   })),
+
+  recentEvent: PropTypes.arrayOf(PropTypes.shape({
+    user: PropTypes.string.isRequired,
+    userIcon: PropTypes.string.isRequired,
+    userId: PropTypes.number.isRequired,
+    updateTime: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+    knowledgeName: PropTypes.string.isRequired,
+    knowledgeId: PropTypes.number.isRequired,
+    type: PropTypes.string.isRequired,
+    articleId: PropTypes.number.isRequired,
+  })).isRequired,
+
   suggest: PropTypes.arrayOf(PropTypes.shape({
     title: PropTypes.string.isRequired,
     cover: PropTypes.string.isRequired,

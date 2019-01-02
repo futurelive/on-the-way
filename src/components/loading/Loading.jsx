@@ -2,7 +2,7 @@ import React from 'react';
 import {
   Spin,
 } from 'antd';
-import style from './Loading.module.scss';
+import style from './Comm.module.scss';
 
 const Loading = () => (
   <div className={style.container}>

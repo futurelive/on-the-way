@@ -2,6 +2,16 @@
   "name": "on-the-way",
   "version": "0.1.0",
   "private": true,
+  "scripts": {
+    "start:web": "node scripts/start.js",
+    "start:web:dashboard": "webpack-dashboard -- node scripts/start.js",
+    "build:web": "node scripts/build.js",
+    "electron-start": "electron .",
+    "start:electron": "concurrently \"npm run start\" \"npm run electron-start\"",
+    "test": "node scripts/test.js"
+  },
+  "main": "main.js",
+  "homepage": ".",
   "dependencies": {
     "@babel/core": "7.1.0",
     "@svgr/webpack": "2.4.1",
@@ -85,14 +95,6 @@
     "webpack-manifest-plugin": "2.0.4",
     "workbox-webpack-plugin": "3.6.2"
   },
-  "scripts": {
-    "start:web": "node scripts/start.js",
-    "start:web:dashboard": "webpack-dashboard -- node scripts/start.js",
-    "build:web": "node scripts/build.js",
-    "electron-start": "electron .",
-    "start:electron": "concurrently \"npm run start\" \"npm run electron-start\"",
-    "test": "node scripts/test.js"
-  },
   "eslintConfig": {
     "extends": "react-app"
   },
@@ -142,7 +144,5 @@
     "presets": [
       "react-app"
     ]
-  },
-  "main": "main.js",
-  "homepage": "."
+  }
 }
